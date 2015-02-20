@@ -1,0 +1,15 @@
+
+# Getting Started with the Intel Xeon Phi on Ubuntu 14.04/Linux Kernel 3.13.0
+http://arrayfire.com/getting-started-with-the-intel-xeon-phi-on-ubuntu-14-04linux-kernel-3-13-0/
+
+# Intel(R) Manycore Platform Software Stack MPSS 3.4.2 README (Intel(R) MPSS README)
+http://registrationcenter.intel.com/irc_nas/5017/readme.txt
+http://registrationcenter.intel.com/irc_nas/5017/MPSS_Users_Guide.pdf
+
+https://repo.anl-external.org/repos/mic-hack/micinfo/
+
+# micflash FAQ
+https://software.intel.com/sites/default/files/Flash%20FAQ.pdf
+
+# mic flash hangs on ubuntu
+https://software.intel.com/en-us/forums/topic/498721
