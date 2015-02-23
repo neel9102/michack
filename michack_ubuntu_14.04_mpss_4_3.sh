@@ -39,16 +39,16 @@ wget http://registrationcenter.intel.com/irc_nas/5017/mpss-3.4.3-linux.tar
 wget http://registrationcenter.intel.com/irc_nas/5017/mpss-src-3.4.3.tar
 
 # unzip the linax tar
-tar xvf mpss-3.4.2-linux.tar
-tar xvf mpss-src-3.4.2.tar
-~/Downloads/mpss-3.4.2/src
-tar -jxvf mpss-modules-3.4.2.tar.bz2
+tar xvf mpss-3.4.3-linux.tar
+tar xvf mpss-src-3.4.3.tar
+~/Downloads/mpss-3.4.3/src
+tar -jxvf mpss-modules-3.4.3.tar.bz2
 
-gedit Makefile
+vi Makefile
 # replace export MIC_CARD_ARCH to 
 export MIC_CARD_ARCH := k1om
 
-gedit ./host/linux.c
+vi ./host/linux.c
 # find the function mic_ctx->sysfs_state = sysfs_get_dirent and change the next line to following line
 #if (LINUX_VERSION_CODE > KERNEL_VERSION(2,6,35)) && (KERNEL_VERSION(3,13,0) > LINUX_VERSION_CODE)
 
@@ -65,7 +65,6 @@ blacklist mic_host
 
 
 # Convert the rpm to deb packages with alien and install
-cd ~/Downloads/mpss-3.4.2
 sudo alien --scripts *.rpm
 sudo dpkg -i *.deb
 # dmesg and lsmod
