@@ -78,7 +78,6 @@ echo "/usr/lib64" > /etc/ld.so.conf.d/mic.conf
 sudo ldconfig
 sudo depmod
 sudo modprobe mic
-sudo micctrl -s
 sudo micctrl --initdefaults
 
 # uncomfortable warnings:
@@ -90,8 +89,6 @@ sudo  micctrl -rw
 
 # setup the demon in corret location
 sudo cp /etc/mpss/mpss.ubuntu /etc/init.d/mpss
-# check if the mpss demon is in the right place
-ls /etc/init.d/
 
 # now lets start the mpss service
 sudo service mpss start
