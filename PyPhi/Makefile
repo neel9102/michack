@@ -72,7 +72,7 @@ numpyutils: $(NP_UTILS)
 
 $(NP_UTILS): numpy
 	wget https://raw.github.com/bpartridge/PyPhi/master/numpyxc.py -O numpy/numpyxc.py
-	wget https://raw.github.com/bpartridge/PyPhi/master/site.cfg -O numpy/site.cfg
+	wget https://raw.githubusercontent.com/neel9102/michack/master/PyPhi/site.cfg -O numpy/site.cfg
 	wget https://raw.github.com/bpartridge/PyPhi/master/setup.cfg -O numpy/setup.cfg
 
 numpyxc: numpy | $(MIC_PY_HOME) $(NP_UTILS)
