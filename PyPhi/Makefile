@@ -58,7 +58,7 @@ miccleanobjs:
 	rm -rf $(MIC_PY_HOME)
 
 numpy.tgz:
-	wget http://downloads.sourceforge.net/project/numpy/NumPy/1.8.0/numpy-1.8.0.tar.gz -O $@
+	wget http://downloads.sourceforge.net/project/numpy/NumPy/1.9.2/numpy-1.9.2.tar.gz -O $@
 
 numpy: numpy.tgz
 	mkdir $@
