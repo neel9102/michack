@@ -1,4 +1,4 @@
-
+# source: https://github.com/bpartridge/PyPhi
 PY_VER = 2.7.3
 SRC = $(shell readlink -f python)
 MIC_PY_HOME = $(SRC)/_install
