@@ -1,8 +1,8 @@
 import os, sys
 
-xcprefix = os.environ.get('/opt/pyphi/mic/python/_install')
-#if not xcprefix:
- # raise Exception("Must specify PYTHONXCPREFIX as an argument to make this work")
+xcprefix = os.environ.get('PYTHONXCPREFIX', None)
+if not xcprefix:
+ raise Exception("Must specify PYTHONXCPREFIX as an argument to make this work")
 
 xcdirflags = "-I{0}/include -L{0}/lib -L{0}/lib/python2.7 " + \
   "-L{0}/lib/python2.7/site-packages/numpy/core/lib"
