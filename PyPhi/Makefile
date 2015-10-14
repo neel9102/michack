@@ -36,7 +36,7 @@ $(SRC)/patched: xcompile.patch $(SRC)/hostpython
 
 $(SRC)/Makefile: $(SRC)/patched $(CTYPES)/.git
 	# Must have unicode UCS4 to be compatible with Numpy on modern Linux systems
-	cd $(SRC) && ./configure CC="icc -mmic" CXX="icpc -mmic" --host=x86_64 --without-gcc
+	cd $(SRC) && ./configure CC="icc -mmic" CXX="icpc -mmic" --host=x86_64 --without-gcc --enable-unicode=ucs4
 
 $(CTYPES)/.git: | $(SRC)
 	mv $(CTYPES) $(CTYPES).orig
