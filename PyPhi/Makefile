@@ -1,7 +1,4 @@
-# source: https://github.com/bpartridge/PyPhi
-# setting up for my machine
-
-
+# source: https://github.com/bpartridge/PyPhi # setting up for my machine
 PY_VER = 2.7.3
 SRC = $(shell readlink -f python)
 MIC_PY_HOME = $(SRC)/_install
@@ -45,7 +42,7 @@ $(CTYPES)/.git: | $(SRC)
 $(MIC_PY_HOME): $(SRC)/Makefile $(SRC)/patched $(CTYPES)/.git
 	sed -e "s/-OPT:Olimit=0//g" -i.backup $(SRC)/Makefile
 	cd $(SRC) && make HOSTPYTHON=./hostpython HOSTPGEN=./Parser/hostpgen \
-		CROSS_COMPILE=k1om- CROSS_COMPILE_TARGET=yes HOSTARCH=k1om BUILDARCH=x86_64-linux-gnu \
+		CROSS_COMPILE=k1om- CROSS_COMPILE_TARGET=yes HOSTARCH=x86_64 BUILDARCH=x86_64-linux-gnu \
 		EXTRA_CFLAGS="-fp-model precise -shared -fPIC" LDFLAGS=""
 	mkdir -p $(MIC_PY_HOME)
 	cd $(SRC) && make install HOSTPYTHON=./hostpython CROSS_COMPILE_TARGET=yes prefix=$(MIC_PY_HOME)
