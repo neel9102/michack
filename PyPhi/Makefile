@@ -36,7 +36,7 @@ $(SRC)/patched: xcompile.patch $(SRC)/hostpython
 
 $(SRC)/Makefile: $(SRC)/patched $(CTYPES)/.git
 	# Must have unicode UCS4 to be compatible with Numpy on modern Linux systems
-	cd $(SRC) && ./configure CC="icc -mmic" CXX="icpc -mmic" --host=x86_64 --without-gcc --enable-unicode=ucs4
+	cd $(SRC) && ./configure CC="icc -mmic" CXX="icpc -mmic" --host=x86_64 --without-gcc
 
 $(CTYPES)/.git: | $(SRC)
 	mv $(CTYPES) $(CTYPES).orig
@@ -45,7 +45,7 @@ $(CTYPES)/.git: | $(SRC)
 $(MIC_PY_HOME): $(SRC)/Makefile $(SRC)/patched $(CTYPES)/.git
 	sed -e "s/-OPT:Olimit=0//g" -i.backup $(SRC)/Makefile
 	cd $(SRC) && make HOSTPYTHON=./hostpython HOSTPGEN=./Parser/hostpgen \
-		CROSS_COMPILE=k1om- CROSS_COMPILE_TARGET=yes HOSTARCH=x86_64 BUILDARCH=x86_64-linux-gnu \
+		CROSS_COMPILE=k1om- CROSS_COMPILE_TARGET=yes HOSTARCH=k1om BUILDARCH=x86_64-linux-gnu \
 		EXTRA_CFLAGS="-fp-model precise -shared -fPIC" LDFLAGS=""
 	mkdir -p $(MIC_PY_HOME)
 	cd $(SRC) && make install HOSTPYTHON=./hostpython CROSS_COMPILE_TARGET=yes prefix=$(MIC_PY_HOME)
